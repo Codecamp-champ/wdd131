@@ -4,45 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 131 - Dynamic Web Fundamentals - Aaron Coker</title>
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Aaron Coker. This page contains information about dynamic web concepts and my projects.">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Aaron Coker. This home page showcases my learning journey in dynamic web development, featuring HTML structure, CSS styling with Flexbox and Grid, and dynamic JavaScript for date updates.">
     <meta name="author" content="Aaron Coker">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="base.css">
-    <script src="getdates.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
-   <h1>WDD 131 - Dynamic Web Fundamentals</h1>
-   <nav>
-    <ul>
-        <li><a href="https://www.linkedin.com/in/aaron-d-c/">LinkedIn</a></li>
-        <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-        <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng">Scripture</a></li>
-        <li><a href="final-project/">Final Project</a></li>
-    </ul>
-   </nav>
+        <h1>WDD 131 - Dynamic Web Fundamentals</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng">Favorite Scripture</a></li>
+                <li><a href="final-project/">Final Project</a></li>
+                <li><a href="#">Web Development Concepts</a></li>
+                <li><a href="#">My Learning Journey</a></li>
+                <li><a href="#">Course Resources</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="card">
-            <h2>Section 1 Heading</h2>
-            <img src="image1.jpg" alt="Image 1 description">
-            <p>This is the content for the first section. Add some interesting details.</p>
+            <h2>Introduction to Dynamic Web Pages</h2>
+            <img src="images/placeholder1.jpg" alt="Abstract image related to web development">
+            <p>This section introduces the fundamental concepts of dynamic web pages. We explore how JavaScript interacts with HTML and CSS to create interactive and engaging user experiences. Understanding the DOM and event handling is crucial for building dynamic websites.</p>
+            <h3>Key Concepts</h3>
+            <ul>
+                <li>DOM Manipulation</li>
+                <li>Event Listeners</li>
+                <li>Asynchronous JavaScript</li>
+            </ul>
         </section>
         <section class="card">
-            <h2>Section 2 Heading</h2>
-            <img src="image2.jpg" alt="Image 2 description">
-            <p>This is the content for the first section. Add some interesting details.</p>
+            <h2>CSS Layout Techniques: Flexbox and Grid</h2>
+            <img src="images/placeholder2.jpg" alt="Layout diagram showcasing Flexbox and Grid">
+            <p>Here, we delve into modern CSS layout techniques, focusing on Flexbox and CSS Grid. These powerful tools enable us to create flexible and responsive layouts that adapt to different screen sizes. We'll look at practical examples of how to implement these techniques.</p>
+            <h3>Flexbox vs. Grid</h3>
+            <p>Flexbox is ideal for one-dimensional layouts, while Grid excels in two-dimensional arrangements.</p>
         </section>
     </main>
     <footer>
         <p>&copy; <span id="currentyear"></span> Aaron Coker | British Columbia, Canada</p>
         <p id="lastModified"></p>
     </footer>
-    <script>
-    document.getElementById("currentyear").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
-    </script>
 </body>
 </html>

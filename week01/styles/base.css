@@ -8,23 +8,21 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
-    background-color: #f4f4f4; /* Replace with your chosen background color */
-    color: #333; /* Replace with your chosen text color */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Header Styling */
 header {
-    background-color: #ddd; /* Replace with your header background color */
+    background-color: #ddd;
     padding: 1rem 2vw;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    color: #222; /* Replace with your header text color */
+    color: #222;
 }
 
-/* Navigation Styling */
 nav {
     display: flex;
     justify-content: center;
@@ -38,38 +36,54 @@ nav ul {
     display: flex;
 }
 
+nav li {
+    margin: 0 0.5rem;
+}
+
 nav a {
     display: block;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #555; /* Replace with your link color */
+    color: #555;
     transition: background-color 0.3s ease;
-    border-radius: 5px; /* Optional: for rounded corners on hover */
+    border-radius: 5px;
 }
 
 nav a:hover {
-    background-color: #bbb; /* Replace with your link hover color */
-    color: #fff; /* Replace with your link hover text color */
+    background-color: #bbb;
+    color: #fff;
 }
 
-/* Main Content Styling */
 main {
-    max-width: 960px; /* Adjust as needed */
+    max-width: 960px;
     margin: 2rem auto;
     padding: 1rem 2vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .card {
-    background-color: #fff; /* Replace with your card background color */
-    border: 1px solid #ccc; /* Optional: card border */
+    background-color: #fff;
+    border: 1px solid #ccc;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px; /* Optional: rounded corners for cards */
+    border-radius: 8px;
 }
 
 .card h2 {
-    color: #444; /* Replace with your card heading color */
+    color: #444;
     margin-top: 0;
+}
+
+.card h3 {
+    color: #666;
+    margin-top: 1rem;
+}
+
+.card ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    padding-left: 0;
 }
 
 .card img {
@@ -77,26 +91,12 @@ main {
     height: auto;
     display: block;
     margin-bottom: 1rem;
-    border-radius: 4px; /* Optional: rounded corners for images */
+    border-radius: 4px;
 }
 
-/* CSS Grid for Cards */
-@media (min-width: 600px) {
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .card {
-        margin-bottom: 0; /* Remove bottom margin when using grid */
-    }
-}
-
-/* Footer Styling */
 footer {
-    background-color: #333; /* Replace with your footer background color */
-    color: #eee; /* Replace with your footer text color */
+    background-color: #333;
+    color: #eee;
     text-align: center;
     padding: 1rem 0;
     font-size: 0.8rem;
@@ -107,9 +107,15 @@ footer p {
 }
 
 footer a {
-    color: #eee; /* Replace with your footer link color */
+    color: #eee;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
 }
