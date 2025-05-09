@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #1f3fc2;
     color: #333;
 }
 
@@ -43,7 +43,7 @@ nav a {
     display: block;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #555;
+    color: #222;
     transition: background-color 0.3s ease;
     border-radius: 5px;
 }
