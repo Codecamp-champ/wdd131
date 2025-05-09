@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f4; /* Replace with your chosen background color */
+    color: #333; /* Replace with your chosen text color */
+}
+
+/* Header Styling */
+header {
+    background-color: #ddd; /* Replace with your header background color */
+    padding: 1rem 2vw;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #222; /* Replace with your header text color */
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: #555; /* Replace with your link color */
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Optional: for rounded corners on hover */
+}
+
+nav a:hover {
+    background-color: #bbb; /* Replace with your link hover color */
+    color: #fff; /* Replace with your link hover text color */
+}
+
+/* Main Content Styling */
+main {
+    max-width: 960px; /* Adjust as needed */
+    margin: 2rem auto;
+    padding: 1rem 2vw;
+}
+
+.card {
+    background-color: #fff; /* Replace with your card background color */
+    border: 1px solid #ccc; /* Optional: card border */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px; /* Optional: rounded corners for cards */
+}
+
+.card h2 {
+    color: #444; /* Replace with your card heading color */
+    margin-top: 0;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 4px; /* Optional: rounded corners for images */
+}
+
+/* CSS Grid for Cards */
+@media (min-width: 600px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        margin-bottom: 0; /* Remove bottom margin when using grid */
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333; /* Replace with your footer background color */
+    color: #eee; /* Replace with your footer text color */
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #eee; /* Replace with your footer link color */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
