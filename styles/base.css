@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background-color: #555;
     color: #ddd;
 }
 
@@ -58,7 +58,7 @@ main {
     margin: 2rem auto;
     padding: 1rem 2vw;
     display: grid;
-    grid-template-columns: 1fr; /* Default to one column on smaller screens */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
@@ -87,21 +87,19 @@ main {
 
 .card img {
     max-width: 100%;
-    height: auto; /* Reset default height */
+    height: auto;
     display: block;
     margin-bottom: 1rem;
     border-radius: 4px;
 }
 
-/* Style the image within the "About me" card */
-.about-me-card img:nth-child(1) {
-    height: 300px;
+.about-me-card .profile-image {
+    height: 250px;
     object-fit: cover;
 }
 
-/* Style the image with the class 'second-image' (within the "About me" card) */
-.second-image {
-    height: 25px;
+.about-me-card .flag-image {
+    height: 150px;
     object-fit: cover;
 }
 
@@ -127,6 +125,6 @@ footer a:hover {
 
 @media (min-width: 768px) {
     main {
-        grid-template-columns: 2fr 1fr; /* First card (About me) takes 2/3, second (Web Resources) takes 1/3 */
+        grid-template-columns: 2fr 1fr;
     }
 }
