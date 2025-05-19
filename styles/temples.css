@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: sans-serif; /* Default font, will be overridden if you use Google Fonts */
+    font-family: sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
@@ -21,13 +21,13 @@ header {
 
 nav {
     display: flex;
-    flex-direction: column; /* Stack links on mobile */
+    flex-direction: column;
     align-items: center;
     margin-top: 1rem;
 }
 
 #hamburger-btn {
-    display: block; /* Show hamburger on mobile */
+    display: block;
     font-size: 1.5rem;
     background: none;
     border: none;
@@ -36,7 +36,7 @@ nav {
 }
 
 #primary-nav {
-    display: none; /* Hide nav links by default on mobile */
+    display: none;
     list-style: none;
     width: 100%;
 }
@@ -69,23 +69,22 @@ nav {
 main {
     padding: 1rem;
     width: 90%;
-    max-width: 960px; /* Limit main content width */
-    margin: 2rem auto; /* Center the main content block */
-    display: grid; /* Ensure grid is set here for mobile as well */
-    grid-template-columns: 1fr; /* Single column on mobile */
-    gap: 1rem; /* Adjust gap for mobile if needed */
+    max-width: 960px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 main h1 {
-    text-align: center; /* Ensures the heading text is centered */
+    text-align: center;
     margin-bottom: 1.5rem;
 }
 
 main figure {
-    margin-bottom: 1rem; /* Reduced margin below figure */
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    /* overflow: hidden; Removed here - will be handled in large screen if needed */
 }
 
 main figure img {
