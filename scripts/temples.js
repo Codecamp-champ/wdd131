@@ -1,7 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (existing code for current year, last modified, hamburger menu)
+    
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-    // Lazy load images
+    document.getElementById("lastModified").textContent = document.lastModified;
+
+    const hamburgerButton = document.getElementById('hamburger-btn');
+    const primaryNav = document.getElementById('primary-nav');
+
+    if (hamburgerButton && primaryNav) {
+        hamburgerButton.addEventListener('click', () => {
+            primaryNav.classList.toggle('open');
+            if (primaryNav.classList.contains('open')) {
+                hamburgerButton.textContent = 'X';
+            } else {
+                hamburgerButton.textContent = '☰';
+            }
+        });
+    }
+
     const images = document.querySelectorAll('img[data-src]');
     const imgOptions = {
         threshold: 0.5,
@@ -12,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src; // This line loads the image
+                img.src = img.dataset.src;
                 img.removeAttribute('data-src');
                 img.onload = () => {
                     img.removeAttribute('loading');
@@ -26,5 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
         imgObserver.observe(img);
     });
 
-    // ... (existing code for figure count)
 });
