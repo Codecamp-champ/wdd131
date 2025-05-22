@@ -7,21 +7,21 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif; /* Using a declared font */
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background-color: #e0e0e0; /* Slightly darker header for better contrast */
+    background-color: #e0e0e0;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif; /* Using a declared font */
+    font-family: 'Roboto', sans-serif;
     color: #2a2a2a;
     margin-bottom: 0.5rem;
 }
@@ -35,27 +35,27 @@ nav {
 
 #hamburger-btn {
     display: block;
-    font-size: 2rem; /* Larger for easier tap target */
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem 1rem; /* More generous padding */
-    color: #333; /* Ensure contrast */
-    transition: color 0.3s ease; /* Smooth transition */
+    padding: 0.5rem 1rem;
+    color: #333;
+    transition: color 0.3s ease;
 }
 
 #hamburger-btn:hover {
-    color: #0056b3; /* A distinct hover color */
+    color: #0056b3;
 }
 
 #primary-nav {
     display: none;
     list-style: none;
     width: 100%;
-    margin-top: 1rem; /* Space between button and menu */
-    background-color: #f9f9f9; /* Light background for the menu */
+    margin-top: 1rem;
+    background-color: #f9f9f9;
     border-radius: 5px;
-    overflow: hidden; /* Ensures rounded corners look good */
+    overflow: hidden;
 }
 
 #primary-nav.open {
@@ -64,27 +64,27 @@ nav {
 }
 
 #primary-nav li {
-    margin: 0; /* Remove vertical margin for stacked items */
+    margin: 0;
     width: 100%;
-    border-bottom: 1px solid #e7e7e7; /* Separator for menu items */
+    border-bottom: 1px solid #e7e7e7;
 }
 
 #primary-nav li:last-child {
-    border-bottom: none; /* No border on the last item */
+    border-bottom: none;
 }
 
 #primary-nav a {
     display: block;
-    padding: 0.85rem; /* Slightly more padding */
+    padding: 0.85rem;
     text-decoration: none;
-    color: #222; /* Darker text for better contrast on light background */
+    color: #222;
     background-color: #f9f9f9;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for hover */
-    font-weight: 500; /* Slightly bolder for navigation */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
 }
 
 #primary-nav a:hover {
-    background-color: #dcdcdc; /* Clearer hover state */
+    background-color: #dcdcdc;
     color: #000;
 }
 
@@ -94,8 +94,8 @@ main {
     max-width: 960px;
     margin: 2rem auto;
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 1.5rem; /* Consistent spacing */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 main h1 {
@@ -104,53 +104,143 @@ main h1 {
     color: #444;
 }
 
-/* Style for the dynamically added figure count */
-main h2#figure-count-display {
+/* Centering the h2 elements within main */
+main h2 {
     text-align: center;
+    margin-bottom: 1.5rem; /* Added or adjusted for consistent spacing */
+    color: #444; /* Matched color with h1 for visual consistency */
+}
+
+/* Specific style for the dynamically added figure count (already centered) */
+main h2#figure-count-display {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     color: #555;
-    grid-column: 1 / -1; /* Ensure it spans full width in grid */
+    grid-column: 1 / -1;
 }
 
-
 main figure {
-    margin-bottom: 0; /* Handled by grid gap */
-    border: 1px solid #ddd; /* Lighter border */
-    border-radius: 8px; /* Slightly more rounded corners */
-    overflow: hidden; /* Ensures image corners match figure */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    background-color: #fff; /* White background for figures */
-    display: flex; /* Use flexbox for consistent image/caption layout */
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
     flex-direction: column;
 }
 
 main figure img {
     display: block;
     width: 100%;
-    height: auto; /* Ensure aspect ratio is maintained */
-    object-fit: cover; /* Useful if you want consistent heights later */
-    border-bottom: 1px solid #eee; /* Separator for image and caption */
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
 }
 
 main figcaption {
-    padding: 1rem; /* More generous padding */
+    padding: 1rem;
     text-align: center;
-    background-color: #f0f0f0; /* Slightly darker than previous #eee for better contrast with #333 text */
+    background-color: #f0f0f0;
     color: #333;
-    font-weight: 600; /* Bolder caption text */
-    flex-grow: 1; /* Allows caption to fill available space if needed */
+    font-weight: 600;
+    flex-grow: 1;
 }
 
 footer {
-    background-color: #2a2a2a; /* Darker footer background */
-    color: #e0e0e0; /* Lighter text for contrast */
+    background-color: #2a2a2a;
+    color: #e0e0e0;
     text-align: center;
     padding: 1.2rem;
     font-size: 0.85rem;
-    margin-top: 2rem; /* Space above footer */
+    margin-top: 2rem;
 }
 
 footer p {
-    margin: 0; /* Ensure no extra margin */
+    margin: 0;
+}
+
+/* styles/temples-large.css (media query) */
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+    }
+
+    nav {
+        margin-top: 0;
+        flex-direction: row;
+    }
+
+    #hamburger-btn {
+        display: none;
+    }
+
+    #primary-nav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        border-radius: 0;
+        margin-top: 0;
+    }
+
+    #primary-nav li {
+        margin: 0 0.75rem;
+        border-bottom: none;
+    }
+
+    #primary-nav a {
+        padding: 0.5rem 0.75rem;
+        background-color: transparent;
+        color: #333;
+        border-radius: 5px;
+    }
+
+    #primary-nav a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: #0056b3;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        margin: 3rem auto;
+    }
+
+    main h1 {
+        grid-column: 1 / -1;
+        margin-bottom: 2rem;
+    }
+
+    main h2 { /* Ensure h2 elements remain centered on large screens */
+        grid-column: 1 / -1;
+        margin-bottom: 1.5rem;
+    }
+
+    main figure {
+        margin-bottom: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    main figure:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    main figure img {
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    main figcaption {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
