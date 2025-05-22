@@ -3,58 +3,82 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 2rem;
+        padding: 1rem 3rem; /* More padding on wider screens */
     }
 
     nav {
         margin-top: 0;
+        flex-direction: row; /* Navbar items in a row */
     }
 
     #hamburger-btn {
-        display: none;
+        display: none; /* Hide hamburger on larger screens */
     }
 
     #primary-nav {
-        display: flex;
+        display: flex; /* Always display nav on large screens */
         flex-direction: row;
-        width: auto;
+        width: auto; /* Let content determine width */
+        background-color: transparent; /* Remove background */
+        border-radius: 0;
+        margin-top: 0;
     }
 
     #primary-nav li {
-        margin: 0 0.5rem;
+        margin: 0 0.75rem; /* Spacing between desktop nav items */
+        border-bottom: none; /* Remove border */
+    }
+
+    #primary-nav a {
+        padding: 0.5rem 0.75rem; /* Adjust padding for desktop links */
+        background-color: transparent; /* Remove background */
+        color: #333; /* Main text color */
+        border-radius: 5px; /* Keep a slight border radius */
+    }
+
+    #primary-nav a:hover {
+        background-color: rgba(0, 0, 0, 0.05); /* Subtle hover for desktop */
+        color: #0056b3; /* Highlight hover */
     }
 
     main {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* More flexible grid */
+        gap: 2rem; /* Increased gap for better visual separation */
         padding: 2rem;
-        margin: 2rem auto;
+        margin: 3rem auto; /* More vertical margin */
     }
 
     main h1 {
-        text-align: center;
-        grid-column: 1 / -1;
+        grid-column: 1 / -1; /* Ensures heading spans all columns */
+        margin-bottom: 2rem; /* More space below main heading */
+    }
+
+    main h2#figure-count-display {
+        grid-column: 1 / -1; /* Ensure it spans full width in grid */
         margin-bottom: 1.5rem;
     }
 
     main figure {
-        margin-bottom: 2rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        margin-bottom: 0; /* Grid gap handles spacing */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect for figures */
+    }
+
+    main figure:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow on hover */
     }
 
     main figure img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 200px; /* Fixed height for images to ensure uniformity */
+        object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
+        object-position: center; /* Center the image within its fixed height */
     }
 
+    /* Optional: Ensure captions maintain consistent height too if desired */
     main figcaption {
-        padding: 0.75rem;
-        text-align: center;
-        background-color: #eee;
-        color: #333;
+        min-height: 50px; /* Example: ensure all captions have at least this height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

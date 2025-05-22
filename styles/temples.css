@@ -7,16 +7,23 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Using a declared font */
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background-color: #ddd;
+    background-color: #e0e0e0; /* Slightly darker header for better contrast */
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif; /* Using a declared font */
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;
 }
 
 nav {
@@ -28,17 +35,27 @@ nav {
 
 #hamburger-btn {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Larger for easier tap target */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem; /* More generous padding */
+    color: #333; /* Ensure contrast */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+#hamburger-btn:hover {
+    color: #0056b3; /* A distinct hover color */
 }
 
 #primary-nav {
     display: none;
     list-style: none;
     width: 100%;
+    margin-top: 1rem; /* Space between button and menu */
+    background-color: #f9f9f9; /* Light background for the menu */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures rounded corners look good */
 }
 
 #primary-nav.open {
@@ -47,22 +64,27 @@ nav {
 }
 
 #primary-nav li {
-    margin: 0.5rem 0;
-    text-align: center;
+    margin: 0; /* Remove vertical margin for stacked items */
     width: 100%;
+    border-bottom: 1px solid #e7e7e7; /* Separator for menu items */
+}
+
+#primary-nav li:last-child {
+    border-bottom: none; /* No border on the last item */
 }
 
 #primary-nav a {
     display: block;
-    padding: 0.75rem;
+    padding: 0.85rem; /* Slightly more padding */
     text-decoration: none;
-    color: #333;
-    background-color: #eee;
-    border-radius: 5px;
+    color: #222; /* Darker text for better contrast on light background */
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for hover */
+    font-weight: 500; /* Slightly bolder for navigation */
 }
 
 #primary-nav a:hover {
-    background-color: #ccc;
+    background-color: #dcdcdc; /* Clearer hover state */
     color: #000;
 }
 
@@ -72,38 +94,63 @@ main {
     max-width: 960px;
     margin: 2rem auto;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 1.5rem; /* Consistent spacing */
 }
 
 main h1 {
     text-align: center;
     margin-bottom: 1.5rem;
+    color: #444;
 }
 
-main figure {
+/* Style for the dynamically added figure count */
+main h2#figure-count-display {
+    text-align: center;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #555;
+    grid-column: 1 / -1; /* Ensure it spans full width in grid */
+}
+
+
+main figure {
+    margin-bottom: 0; /* Handled by grid gap */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 8px; /* Slightly more rounded corners */
+    overflow: hidden; /* Ensures image corners match figure */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    background-color: #fff; /* White background for figures */
+    display: flex; /* Use flexbox for consistent image/caption layout */
+    flex-direction: column;
 }
 
 main figure img {
     display: block;
     width: 100%;
-    height: auto;
+    height: auto; /* Ensure aspect ratio is maintained */
+    object-fit: cover; /* Useful if you want consistent heights later */
+    border-bottom: 1px solid #eee; /* Separator for image and caption */
 }
 
 main figcaption {
-    padding: 0.75rem;
+    padding: 1rem; /* More generous padding */
     text-align: center;
-    background-color: #eee;
+    background-color: #f0f0f0; /* Slightly darker than previous #eee for better contrast with #333 text */
     color: #333;
+    font-weight: 600; /* Bolder caption text */
+    flex-grow: 1; /* Allows caption to fill available space if needed */
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #2a2a2a; /* Darker footer background */
+    color: #e0e0e0; /* Lighter text for contrast */
     text-align: center;
-    padding: 1rem;
-    font-size: 0.8rem;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    margin-top: 2rem; /* Space above footer */
+}
+
+footer p {
+    margin: 0; /* Ensure no extra margin */
 }
