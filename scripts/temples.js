@@ -1,18 +1,30 @@
-// Footer copyright year
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (existing code for current year, last modified, hamburger menu)
 
-// Footer last modified date
-document.getElementById("lastModified").textContent = document.lastModified;
+    // Lazy load images
+    const images = document.querySelectorAll('img[data-src]');
+    const imgOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px 50px 0px'
+    };
 
-// Hamburger button functionality
-const hamburgerButton = document.getElementById('hamburger-btn');
-const primaryNav = document.getElementById('primary-nav');
+    const imgObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src; // This line loads the image
+                img.removeAttribute('data-src');
+                img.onload = () => {
+                    img.removeAttribute('loading');
+                };
+                observer.unobserve(img);
+            }
+        });
+    }, imgOptions);
 
-hamburgerButton.addEventListener('click', () => {
-    primaryNav.classList.toggle('open');
-    if (primaryNav.classList.contains('open')) {
-        hamburgerButton.textContent = 'X';
-    } else {
-        hamburgerButton.textContent = '☰'; // Or whatever symbol you used
-    }
+    images.forEach(img => {
+        imgObserver.observe(img);
+    });
+
+    // ... (existing code for figure count)
 });
