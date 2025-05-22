@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #e0e0e0;
+    background-color: #2a2a2a;
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -22,7 +22,7 @@ header {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    color: #2a2a2a;
+    color: #e0e0e0;
     margin-bottom: 0.5rem;
 }
 
@@ -40,7 +40,7 @@ nav {
     border: none;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    color: #333;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
@@ -77,15 +77,15 @@ nav {
     display: block;
     padding: 0.85rem;
     text-decoration: none;
-    color: #222;
-    background-color: #f9f9f9;
+    color: #e0e0e0;
+    background-color: #2a2a2a;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: 500;
 }
 
 #primary-nav a:hover {
-    background-color: #dcdcdc;
-    color: #000;
+    background-color: #3a3a3a;
+    color: #ffffff;
 }
 
 main {

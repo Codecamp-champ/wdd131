@@ -32,13 +32,13 @@
     #primary-nav a {
         padding: 0.5rem 0.75rem; /* Adjust padding for desktop links */
         background-color: transparent; /* Remove background */
-        color: #333; /* Main text color */
+        color: #e0e0e0; /* Main text color */
         border-radius: 5px; /* Keep a slight border radius */
     }
 
     #primary-nav a:hover {
-        background-color: rgba(0, 0, 0, 0.05); /* Subtle hover for desktop */
-        color: #0056b3; /* Highlight hover */
+        background-color: rgba(255, 255, 255, 0.1); /* Subtle hover for desktop */
+        color: #ffffff; /* Highlight hover */
     }
 
     main {
