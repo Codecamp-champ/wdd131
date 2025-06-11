@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Temples</title>
+    <meta name="description" content="Explore a beautiful album of sacred temples. Discover stunning images and learn about their significance.">
+    <meta name="author" content="Aaron Coker">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 768px)">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temple Album: Houses of the Lord</h1>
+        <nav>
+            <button id="hamburger-btn" aria-label="Toggle Navigation">&#9776;</button>
+            <ul id="primary-nav" aria-label="Main Navigation">
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="old-link">Old</a></li>
+                <li><a href="#" id="new-link">New</a></li>
+                <li><a href="#" id="large-link">Large</a></li>
+                <li><a href="#" id="small-link">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Temples</h2>
+        <div id="temple-cards-container" class="grid">
+            </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Aaron Coker | British Columbia, Canada</p>
+        <p>Temple Album | Last Updated: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

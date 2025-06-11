@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2a2a2a;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 { /* Specific style for header h1 */
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#hamburger-btn {
+    display: block; /* Visible on small screens */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+#hamburger-btn:hover {
+    color: #0056b3;
+}
+
+#primary-nav {
+    display: none; /* Hidden by default on small screens */
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#primary-nav.open {
+    display: flex; /* Display when 'open' class is added by JS */
+    flex-direction: column;
+}
+
+#primary-nav li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#primary-nav li:last-child {
+    border-bottom: none;
+}
+
+#primary-nav a {
+    display: block;
+    padding: 0.85rem;
+    text-decoration: none;
+    color: #e0e0e0; /* Default color for nav links */
+    background-color: #2a2a2a; /* Default background for nav links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+#primary-nav a:hover {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+main {
+    padding: 1rem;
+    width: 90%;
+    max-width: 960px;
+    margin: 2rem auto;
+}
+
+main h2 { /* Styling for the main content heading */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #444;
+    font-family: 'Roboto', sans-serif;
+}
+
+#temple-cards-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 1.5rem; /* Space between cards */
+}
+
+.temple-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center text within the card */
+}
+
+.temple-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.temple-card h3 { /* Styling for temple name */
+    font-size: 1.5em;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+.temple-card p { /* Styling for temple details */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+
+/* Ensure padding for img and content within the card */
+.temple-card img {
+    padding: 0.5rem; /* Add padding around image */
+}
+.temple-card p:last-of-type {
+    margin-bottom: 1rem; /* Add bottom margin for last paragraph */
+}
+
+
+footer {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
