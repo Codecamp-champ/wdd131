@@ -12,11 +12,11 @@
     }
 
     #hamburger-btn {
-        display: none; /* Hide hamburger on large screens */
+        display: none;
     }
 
     #primary-nav {
-        display: flex; /* Always display nav links on large screens */
+        display: flex;
         flex-direction: row;
         width: auto;
         background-color: transparent;
@@ -32,24 +32,24 @@
     #primary-nav a {
         padding: 0.5rem 0.75rem;
         background-color: transparent;
-        color: #e0e0e0; /* Adjust color for large screen header */
+        color: #e0e0e0;
         border-radius: 5px;
     }
 
     #primary-nav a:hover {
-        background-color: rgba(255, 255, 255, 0.1); /* Lighter hover for dark header */
+        background-color: rgba(255, 255, 255, 0.1);
         color: #ffffff;
     }
 
     #temple-cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2+ columns */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
         padding: 2rem;
         margin: 3rem auto;
     }
 
-    main h2 { /* Ensure h2 elements remain centered on large screens */
-        grid-column: 1 / -1; /* Make heading span all columns */
+    main h2 {
+        grid-column: 1 / -1;
         margin-bottom: 2rem;
     }
 
@@ -64,7 +64,7 @@
     }
 
     .temple-card img {
-        height: 200px; /* Fixed height for images on large screens */
+        height: 200px;
         object-fit: cover;
         object-position: center;
     }

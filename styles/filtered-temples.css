@@ -20,7 +20,7 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header h1 { /* Specific style for header h1 */
+header h1 {
     font-family: 'Roboto', sans-serif;
     color: #e0e0e0;
     margin-bottom: 0.5rem;
@@ -34,7 +34,7 @@ nav {
 }
 
 #hamburger-btn {
-    display: block; /* Visible on small screens */
+    display: block;
     font-size: 2rem;
     background: none;
     border: none;
@@ -49,17 +49,17 @@ nav {
 }
 
 #primary-nav {
-    display: none; /* Hidden by default on small screens */
+    display: none;
     list-style: none;
     width: 100%;
     margin-top: 1rem;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Consider making this transparent if you want header color to show through */
     border-radius: 5px;
     overflow: hidden;
 }
 
 #primary-nav.open {
-    display: flex; /* Display when 'open' class is added by JS */
+    display: flex;
     flex-direction: column;
 }
 
@@ -77,8 +77,8 @@ nav {
     display: block;
     padding: 0.85rem;
     text-decoration: none;
-    color: #e0e0e0; /* Default color for nav links */
-    background-color: #2a2a2a; /* Default background for nav links */
+    color: #e0e0e0;
+    background-color: #2a2a2a;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: 500;
 }
@@ -95,7 +95,7 @@ main {
     margin: 2rem auto;
 }
 
-main h2 { /* Styling for the main content heading */
+main h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #444;
@@ -104,8 +104,8 @@ main h2 { /* Styling for the main content heading */
 
 #temple-cards-container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on small screens */
-    gap: 1.5rem; /* Space between cards */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .temple-card {
@@ -116,7 +116,7 @@ main h2 { /* Styling for the main content heading */
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    text-align: center; /* Center text within the card */
+    text-align: center;
 }
 
 .temple-card img {
@@ -127,14 +127,14 @@ main h2 { /* Styling for the main content heading */
     border-bottom: 1px solid #eee;
 }
 
-.temple-card h3 { /* Styling for temple name */
+.temple-card h3 {
     font-size: 1.5em;
     margin: 1rem 0 0.5rem;
     color: #333;
     font-family: 'Roboto', sans-serif;
 }
 
-.temple-card p { /* Styling for temple details */
+.temple-card p {
     font-size: 0.9em;
     color: #666;
     margin-bottom: 0.5rem;
@@ -143,10 +143,10 @@ main h2 { /* Styling for the main content heading */
 
 /* Ensure padding for img and content within the card */
 .temple-card img {
-    padding: 0.5rem; /* Add padding around image */
+    padding: 0.5rem;
 }
 .temple-card p:last-of-type {
-    margin-bottom: 1rem; /* Add bottom margin for last paragraph */
+    margin-bottom: 1rem;
 }
 
 

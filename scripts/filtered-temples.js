@@ -79,26 +79,27 @@ const temples = [
 ];
 function createTempleCard(temple) {
   const article = document.createElement('article');
-  article.classList.add('temple-card'); // Add a class for styling
+  article.classList.add('temple-card');
 
-  const h3 = document.createElement('h3'); // Changed to h3 for semantic structure
+  const h3 = document.createElement('h3');
   h3.textContent = temple.templeName;
 
   const locationParagraph = document.createElement('p');
   locationParagraph.textContent = `Location: ${temple.location}`;
 
   const dedicatedParagraph = document.createElement('p');
-  dedicatedParagraph.textContent = `Dedicated: ${temple.dedicated}`;
+  const dedicatedDate = new Date(temple.dedicated);
+  dedicatedParagraph.textContent = `Dedicated: ${dedicatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
 
   const areaParagraph = document.createElement('p');
-  areaParagraph.textContent = `Area: ${temple.area.toLocaleString()} sq ft`; // Format area with commas
+  areaParagraph.textContent = `Area: ${temple.area.toLocaleString()} sq ft`;
 
   const img = document.createElement('img');
   img.src = temple.imageUrl;
   img.alt = `${temple.templeName} Temple`;
   img.loading = 'lazy'; // Native lazy loading
-  img.width = 400; // Set a default width for consistency
-  img.height = 250; // Set a default height for consistency
+  img.width = 400;
+  img.height = 250;
 
   article.appendChild(h3);
   article.appendChild(locationParagraph);
@@ -108,6 +109,7 @@ function createTempleCard(temple) {
 
   return article;
 }
+
 function displayTemples(filteredTemples) {
   const container = document.getElementById('temple-cards-container');
   container.innerHTML = ''; // Clear existing content
@@ -117,10 +119,12 @@ function displayTemples(filteredTemples) {
       container.appendChild(card);
   });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const primaryNav = document.getElementById('primary-nav');
   const navLinks = primaryNav.querySelectorAll('a');
+  const filterHeading = document.getElementById('filter-heading'); // Get the heading element
 
   // Toggle navigation menu for small screens
   hamburgerBtn.addEventListener('click', () => {
@@ -128,18 +132,22 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburgerBtn.setAttribute('aria-expanded', primaryNav.classList.contains('open'));
   });
 
+  // Initial display of all temples
+  displayTemples(temples);
+
   // Event listeners for navigation filtering
   navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
           e.preventDefault(); // Prevent default link behavior
 
-          const filterType = link.id; // Get the ID to determine filter
-
+          const filterType = link.id;
           let filteredList = [];
+          let headingText = "";
 
           switch (filterType) {
               case 'home-link':
                   filteredList = temples;
+                  headingText = "Home";
                   break;
               case 'old-link':
                   // Temples built before 1900
@@ -147,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       const year = parseInt(temple.dedicated.split(',')[0]);
                       return year < 1900;
                   });
+                  headingText = "Old Temples";
                   break;
               case 'new-link':
                   // Temples built after 2000
@@ -154,20 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
                       const year = parseInt(temple.dedicated.split(',')[0]);
                       return year > 2000;
                   });
+                  headingText = "New Temples";
                   break;
               case 'large-link':
                   // Temples larger than 90,000 square feet
                   filteredList = temples.filter(temple => temple.area > 90000);
+                  headingText = "Large Temples";
                   break;
               case 'small-link':
                   // Temples smaller than 10,000 square feet
                   filteredList = temples.filter(temple => temple.area < 10000);
+                  headingText = "Small Temples";
                   break;
               default:
                   filteredList = temples; // Fallback to all temples
+                  headingText = "Home";
                   break;
           }
           displayTemples(filteredList);
+          filterHeading.textContent = headingText; // Update the heading text
 
           // Close the nav on mobile after selection
           if (primaryNav.classList.contains('open')) {
@@ -176,6 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   });
+
+  // Footer current year
   const currentYearSpan = document.getElementById('currentYear');
   if (currentYearSpan) {
       currentYearSpan.textContent = new Date().getFullYear();
