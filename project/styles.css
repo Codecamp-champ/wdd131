@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #FFD700;   /* Gold - for headings, main accents */
+    --secondary-color: #2C3E50; /* Dark Slate Gray - for backgrounds, content blocks */
+    --accent-color: #3498DB;    /* Peter River - Bright Blue for links, buttons */
+    --text-color: #ECF0F1;      /* Clouds - Light Gray for body text */
+    --dark-text-on-light: #34495E; /* Wet Asphalt - for text on light backgrounds if needed */
+}
+
+/* Base Body Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Body Text Font */
+    color: var(--dark-text-on-light); /* Default text color on light backgrounds */
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Headings Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif; /* Headings Font */
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--text-color); /* H1 in header is white */
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 1em;
+    color: var(--primary-color); /* H2 in main content is gold */
+}
+
+/* Header Specifics */
+header {
+    background-color: var(--secondary-color); /* Dark Slate Gray background */
+    color: var(--text-color); /* Light Gray text */
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.site-branding .logo {
+    border-radius: 50%;
+    border: 3px solid var(--primary-color); /* Gold border for logo */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Glowing effect */
+}
+
+/* Main Content Area */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: white; /* White background for content sections */
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.site-info {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--accent-color);
+}
+
+.site-info:last-child {
+    border-bottom: none;
+}
+
+/* Paragraph and List Styling */
+p, ul, ol {
+    color: var(--dark-text-on-light); /* Dark text on light background */
+}
+
+a {
+    color: var(--accent-color); /* Bright Blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Color Schema Examples */
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-right: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.primary-color { background-color: var(--primary-color); }
+.secondary-color { background-color: var(--secondary-color); }
+.accent-color { background-color: var(--accent-color); }
+.text-color { background-color: var(--text-color); }
+
+/* Typography Examples */
+.font-example-orbitron {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.font-example-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    color: var(--dark-text-on-light);
+}
+
+/* Preformatted text for Wireframes */
+pre {
+    background-color: var(--secondary-color); /* Dark Slate Gray background for code blocks */
+    border: 1px solid var(--accent-color);
+    padding: 15px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    color: var(--text-color); /* Light Gray text for code */
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--secondary-color); /* Footer background is Dark Slate Gray */
+    color: white; /* <-- Footer text color explicitly set to white */
+    font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: var(--accent-color); /* Links within the footer will be bright blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .site-branding {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
