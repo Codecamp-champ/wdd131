@@ -60,23 +60,23 @@ const temples = [
     location: "Denver, Colorado",
     dedicated: "1986, October, 24",
     area: 29117,
-    imageUrl: "https://assets.churchofjesuschrist.org/54/a1/54a10ee81765c9f53e7f9a263255152b04f76269/denver_colorado_temple_exterior_light.jpeg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/denver-colorado-temple/denver-colorado-temple-42455-main.jpg"
 },
 {
     templeName: "Gilbert Arizona",
     location: "Gilbert, Arizona",
     dedicated: "2014, March, 2",
     area: 85326,
-    imageUrl: "https://assets.churchofjesuschrist.org/8f/c7/8fc7cf2c35e4d2576b91122a6136696ce62a8c51/gilbert_arizona_temple_exterior.jpeg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/gilbert-arizona-temple/gilbert-arizona-temple-3802-main.jpg"
 },
 {
     templeName: "Vancouver British Columbia",
     location: "Vancouver, British Columbia",
     dedicated: "2010, May, 2",
     area: 28165,
-    imageUrl: "https://assets.churchofjesuschrist.org/69/84/69841f3d32ce7d6ef9262e3d368021c1763ef808/vancouver_british_columbia_temple.jpeg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/vancouver-british-columbia-temple/vancouver-british-columbia-temple-13064-main.jpg"
 },
-];
+]
 function createTempleCard(temple) {
   const article = document.createElement('article');
   article.classList.add('temple-card');
