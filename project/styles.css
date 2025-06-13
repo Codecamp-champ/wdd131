@@ -10,7 +10,7 @@
 body {
     font-family: 'Roboto', sans-serif; /* Body Text Font */
     color: var(--dark-text-on-light); /* Default text color on light backgrounds */
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); - This variable is not defined, removed or replace as needed */
     margin: 0;
     padding: 20px;
     line-height: 1.6;
@@ -61,6 +61,9 @@ header {
     border-radius: 50%;
     border: 3px solid var(--primary-color); /* Gold border for logo */
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Glowing effect */
+    width: 80px; /* Added a fixed width for consistent logo size */
+    height: 80px; /* Added a fixed height for consistent logo size */
+    object-fit: cover; /* Ensures image covers the area without distortion */
 }
 
 /* Main Content Area */
@@ -147,10 +150,15 @@ footer {
     margin-top: 40px;
     padding: 20px;
     background-color: var(--secondary-color); /* Footer background is Dark Slate Gray */
-    color: white; /* <-- Footer text color explicitly set to white */
+    color: white; /* <-- This ensures direct text in footer is white, but 'p' has higher specificity */
     font-size: 0.9em;
     border-radius: 8px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* FIX: Target paragraphs inside the footer to ensure they are white */
+footer p {
+    color: #ECF0F1;
 }
 
 footer a {
