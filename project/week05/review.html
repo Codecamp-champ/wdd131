@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #333; /* Darker text */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-xl border border-gray-200 text-center">
+        <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Thank You for Your Review!</h1>
+        <p class="text-lg text-gray-600 mb-6">Your feedback is greatly appreciated.</p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-md p-4 mb-8">
+            <p class="text-blue-700 text-sm font-medium">You have submitted <span id="reviewCount" class="font-bold text-blue-900">0</span> reviews.</p>
+        </div>
+
+        <a href="form.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+            Submit Another Review
+        </a>
+    </div>
+
+    <!-- Common Footer Content -->
+    <footer class="mt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Product Reviews. All rights reserved.</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        // JavaScript for review.html
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewCountSpan = document.getElementById('reviewCount');
+            let count = parseInt(localStorage.getItem('reviewCount')) || 0; // Get count, default to 0 if not found
+
+            // Increment the counter only if this page was loaded from a form submission
+            // A simple way to check is if there are URL parameters, indicating a form submission.
+            // This is a basic check. For more robust checks, you'd involve server-side logic or specific query params.
+            if (window.location.search) {
+                count++; // Increment only if URL has query parameters
+                localStorage.setItem('reviewCount', count); // Store the updated count
+            }
+            reviewCountSpan.textContent = count; // The current count
+
+            // Update last modified date
+            const lastModifiedSpan = document.getElementById('lastModified');
+            if (lastModifiedSpan) {
+                lastModifiedSpan.textContent = document.lastModified;
+            }
+        });
+    </script>
+</body>
+</html>

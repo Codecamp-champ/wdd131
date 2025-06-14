@@ -1,0 +1,27 @@
+.stars label {
+    font-size: 2rem; /* Make stars larger */
+    color: #ccc;    /* Default star color */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.stars input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Gold color for selected and preceding stars */
+}
+
+/* Order of labels matters for the ~ selector (general sibling combinator)
+   Stars are arranged in reverse in HTML to allow CSS to select previous siblings. */
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #ffdb58; /* Lighter gold on hover */
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f3f4f6; /* Light gray background */
+    color: #333; /* Darker text */
+}
