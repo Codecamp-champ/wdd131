@@ -1,27 +1,30 @@
+body {
+    font-family: "Inter", sans-serif; /* Apply the Inter font */
+    background-color: #f3f4f6; /* Light gray background color */
+    color: #333; /* Darker text color for readability */
+}
+
+/* Custom styles for the star rating system */
 .stars label {
-    font-size: 2rem; /* Make stars larger */
-    color: #ccc;    /* Default star color */
-    cursor: pointer;
-    transition: color 0.2s;
+    font-size: 2rem; /* Make the star icons larger */
+    color: #ccc;    /* Default color for unselected stars */
+    cursor: pointer; /* Indicate that stars are interactive */
+    transition: color 0.2s ease-in-out; /* Smooth transition for color changes */
 }
 
+/* Hide the default radio button element */
 .stars input[type="radio"] {
-    display: none; /* Hide the default radio button */
+    display: none;
 }
 
+/* Style for selected stars and stars preceding the selected one */
 .stars input[type="radio"]:checked ~ label {
-    color: #ffc107; /* Gold color for selected and preceding stars */
+    color: #ffc107; /* Gold color for selected and higher-rated stars */
 }
 
-/* Order of labels matters for the ~ selector (general sibling combinator)
-   Stars are arranged in reverse in HTML to allow CSS to select previous siblings. */
+/* Hover effect for stars: changes color of the hovered star and its preceding siblings */
+/* Stars are arranged in reverse order in HTML to allow the ~ selector to work correctly */
 .stars label:hover,
 .stars label:hover ~ label {
-    color: #ffdb58; /* Lighter gold on hover */
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background-color: #f3f4f6; /* Light gray background */
-    color: #333; /* Darker text */
+    color: #ffdb58; /* Lighter gold color on hover */
 }

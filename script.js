@@ -17,28 +17,43 @@ const products = [
     }
 ];
 
-// Function to populate the product name dropdown
+/**
+ * Populates the product name dropdown select element
+ * with options from the 'products' array.
+ */
 function populateProductDropdown() {
-    const productNameSelect = document.getElementById('productName');
+    const productNameSelect = document.getElementById('productName'); // Get the select element
 
-    products.forEach(product => {
-        const option = document.createElement('option');
-        option.value = product.id; // Use product.id for the value attribute
-        option.textContent = product.name; // Use product.name for the display text
-        productNameSelect.appendChild(option);
-    });
-}
-
-// Function to update the last modified date in the footer
-function updateLastModified() {
-    const lastModifiedSpan = document.getElementById('lastModified');
-    if (lastModifiedSpan) {
-        lastModifiedSpan.textContent = document.lastModified;
+    // Ensure the select element exists before proceeding
+    if (productNameSelect) {
+        // Iterate over each product in the array
+        products.forEach(product => {
+            const option = document.createElement('option'); // Create a new option element
+            option.value = product.id; // Set the option's value to the product's ID
+            option.textContent = product.name; // Set the option's visible text to the product's name
+            productNameSelect.appendChild(option); // Add the option to the select dropdown
+        });
+    } else {
+        console.error("Product name select element not found.");
     }
 }
 
-// Event listener to run functions when the DOM is fully loaded
+/**
+ * Updates the 'Last Modified' span in the footer with the document's last modified date.
+ */
+function updateLastModified() {
+    const lastModifiedSpan = document.getElementById('lastModified'); // Get the span element
+
+    // Ensure the span element exists before proceeding
+    if (lastModifiedSpan) {
+        lastModifiedSpan.textContent = document.lastModified; // Set its text content to the document's last modified date
+    } else {
+        console.error("Last modified span element not found.");
+    }
+}
+
+// Event listener to execute functions once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    populateProductDropdown();
-    updateLastModified();
+    populateProductDropdown(); // Call the function to populate the product dropdown
+    updateLastModified();      // Call the function to update the last modified date
 });

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Confirmation</title>
+    <!-- Meta description for SEO -->
+    <meta name="description" content="Confirmation page for product review submission. Displays review count.">
+    <!-- Meta author to identify the creator -->
+    <meta name="author" content="Aaron Coker">
+
     <!-- Tailwind CSS CDN for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: "Inter", sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #333; /* Darker text */
-        }
-    </style>
+    <!-- Link to external custom styles.css file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-xl border border-gray-200 text-center">
@@ -30,31 +30,11 @@
 
     <!-- Common Footer Content -->
     <footer class="mt-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2024 Product Reviews. All rights reserved.</p>
+        <p>&copy; 2025 Product Reviews. All rights reserved.</p>
         <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
 
-    <script>
-        // JavaScript for review.html
-        document.addEventListener('DOMContentLoaded', () => {
-            const reviewCountSpan = document.getElementById('reviewCount');
-            let count = parseInt(localStorage.getItem('reviewCount')) || 0; // Get count, default to 0 if not found
-
-            // Increment the counter only if this page was loaded from a form submission
-            // A simple way to check is if there are URL parameters, indicating a form submission.
-            // This is a basic check. For more robust checks, you'd involve server-side logic or specific query params.
-            if (window.location.search) {
-                count++; // Increment only if URL has query parameters
-                localStorage.setItem('reviewCount', count); // Store the updated count
-            }
-            reviewCountSpan.textContent = count; // The current count
-
-            // Update last modified date
-            const lastModifiedSpan = document.getElementById('lastModified');
-            if (lastModifiedSpan) {
-                lastModifiedSpan.textContent = document.lastModified;
-            }
-        });
-    </script>
+    <!-- Link to external review.js file with 'defer' attribute for optimal loading -->
+    <script src="review.js" defer></script>
 </body>
 </html>
