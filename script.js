@@ -39,21 +39,28 @@ function populateProductDropdown() {
 }
 
 /**
- * Updates the 'Last Modified' span in the footer with the document's last modified date.
+ * Updates the 'Last Modified' span and 'Current Year' span in the footer.
  */
-function updateLastModified() {
-    const lastModifiedSpan = document.getElementById('lastModified'); // Get the span element
+function updateFooterDates() {
+    const lastModifiedSpan = document.getElementById('lastModified');
+    const currentYearSpan = document.getElementById('currentYear');
 
-    // Ensure the span element exists before proceeding
     if (lastModifiedSpan) {
-        lastModifiedSpan.textContent = document.lastModified; // Set its text content to the document's last modified date
+        // document.lastModified already includes "Last Modified: "
+        lastModifiedSpan.textContent = `Review Form | ${document.lastModified}`;
     } else {
-        console.error("Last modified span element not found.");
+        console.error("Last modified span element not found in footer.");
+    }
+
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    } else {
+        console.error("Current year span element not found in footer.");
     }
 }
 
 // Event listener to execute functions once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     populateProductDropdown(); // Call the function to populate the product dropdown
-    updateLastModified();      // Call the function to update the last modified date
+    updateFooterDates();       // Call the function to update the footer dates
 });

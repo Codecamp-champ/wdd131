@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update the last modified date in the footer
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) {
+        // document.lastModified already includes "Last Modified: "
         lastModifiedSpan.textContent = document.lastModified;
     } else {
         console.error("Last modified span element not found.");

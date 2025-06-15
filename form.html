@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review Form</title>
-    <!-- Tailwind CSS CDN for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for star rating */
@@ -43,21 +42,17 @@
         <p class="text-center text-gray-600 mb-8">Share your thoughts on your recent purchase!</p>
 
         <form action="review.html" method="get" class="space-y-6">
-            <!-- Product Name -->
             <div>
                 <label for="productName" class="block text-sm font-medium text-gray-700 mb-1">Product Name <span class="text-red-500">*</span></label>
                 <select id="productName" name="productName" required
                         class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md shadow-sm">
                     <option value="" disabled selected>Select a Product ...</option>
-                    <!-- Options will be dynamically populated by JavaScript -->
-                </select>
+                    </select>
             </div>
 
-            <!-- Overall Rating -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Overall Rating <span class="text-red-500">*</span></label>
                 <div class="stars flex justify-center space-x-1 mt-2">
-                    <!-- Stars arranged in reverse order for CSS ~ selector to work -->
                     <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
                     <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
                     <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
@@ -66,14 +61,12 @@
                 </div>
             </div>
 
-            <!-- Date of Installation -->
             <div>
                 <label for="installDate" class="block text-sm font-medium text-gray-700 mb-1">Date of Installation <span class="text-red-500">*</span></label>
                 <input type="date" id="installDate" name="installDate" required
                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
             </div>
 
-            <!-- Useful Features -->
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Useful Features:</label>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -105,7 +98,6 @@
                 </div>
             </div>
 
-            <!-- Written Review -->
             <div>
                 <label for="reviewText" class="block text-sm font-medium text-gray-700 mb-1">Written Review (Optional)</label>
                 <textarea id="reviewText" name="reviewText" rows="4"
@@ -113,7 +105,6 @@
                           placeholder="Share your detailed review..."></textarea>
             </div>
 
-            <!-- User Name -->
             <div>
                 <label for="userName" class="block text-sm font-medium text-gray-700 mb-1">Your Name (Optional)</label>
                 <input type="text" id="userName" name="userName"
@@ -121,7 +112,6 @@
                        placeholder="Enter your name">
             </div>
 
-            <!-- Form Submission Button -->
             <div>
                 <input type="submit" value="Post Review"
                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer transition-colors">
@@ -129,10 +119,9 @@
         </form>
     </div>
 
-    <!-- Common Footer Content -->
     <footer class="mt-8 text-center text-gray-500 text-sm">
             <p>&copy; <span id="currentYear"></span> Aaron Coker | British Columbia, Canada</p>
-            <p>Review Form | Last Updated: <span id="lastModified"></span></p>
+            <p>Review Form | <span id="lastModified"></span></p>
     </footer>
 
     <script src="script.js"></script>
