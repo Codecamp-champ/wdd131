@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let count = parseInt(localStorage.getItem('reviewCount')) || 0; // Retrieve count from localStorage, default to 0 if not found
 
     // Check if the page was loaded due to a form submission (i.e., has URL parameters)
-    // This is a simple heuristic; a more robust solution would involve server-side logic
-    // or a specific query parameter from the form.
     if (window.location.search) {
         count++; // Increment the count only if it appears to be a new submission
         localStorage.setItem('reviewCount', count); // Store the updated count back into localStorage
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastModifiedSpan = document.getElementById('lastModified');
     if (lastModifiedSpan) {
         // document.lastModified already includes "Last Modified: "
-        lastModifiedSpan.textContent = document.lastModified;
+        lastModifiedSpan.textContent = `Last Modified: ${document.lastModified}`;
     } else {
         console.error("Last modified span element not found.");
     }

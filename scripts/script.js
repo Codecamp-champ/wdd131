@@ -47,7 +47,7 @@ function updateFooterDates() {
 
     if (lastModifiedSpan) {
         // document.lastModified already includes "Last Modified: "
-        lastModifiedSpan.textContent = `Review Form | ${document.lastModified}`;
+        lastModifiedSpan.textContent = `Last Updated: ${document.lastModified}`;
     } else {
         console.error("Last modified span element not found in footer.");
     }
